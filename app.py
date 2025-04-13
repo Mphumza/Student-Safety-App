@@ -5,6 +5,9 @@ from firebase_setup import upload_image_to_imgbb
 from werkzeug.security import check_password_hash , generate_password_hash
 from qr_code import generate_qr 
 import uuid
+import os
+from waitress import serve
+import logging
 from datetime import timezone
 from flask_mail import Mail
 from qr_code import delete_child
@@ -579,4 +582,13 @@ def admin_list():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Set up logging
+    logging.basicConfig(level=logging.DEBUG)
+
+    # Fetch the port from the environment variable, or default to 5000
+    port = int(os.environ.get('PORT', 5000))
+
+    # Log the port and host for confirmation
+    logging.debug(f"Starting app on http://0.0.0.0:{port}")
+
+    serve(app, host='0.0.0.0', port=port)
