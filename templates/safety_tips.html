@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Safety Tips – Coming Soon{% endblock %}
+
+{% block content %}
+<style>
+    .floating-text {
+        animation: float 3s ease-in-out infinite;
+        color: #0d6efd;
+        text-shadow: 0 0 8px rgba(13, 110, 253, 0.6);
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .ai-blink {
+        animation: blink 1.2s ease-in-out infinite;
+        color: #198754;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+    }
+</style>
+
+<div class="d-flex justify-content-center align-items-center flex-column text-center" style="height: 60vh;">
+    <h1 class="display-4 mb-3 floating-text">🚧 Coming Soon!</h1>
+    <p class="lead">AI-powered personalized safety tips <span class="ai-blink">are loading...</span></p>
+    <p class="text-muted">Stay safe. Stay smart. Stay ready. 🤖✨</p>
+</div>
+{% endblock %}

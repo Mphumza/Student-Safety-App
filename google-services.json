@@ -1,0 +1,48 @@
+{
+    "project_info": {
+      "project_number": "881424394419",
+      "project_id": "studenttracker2-82547",
+      "storage_bucket": "studenttracker2-82547.firebasestorage.app"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:881424394419:android:90c0e73d704c0165f0a8c6",
+          "android_client_info": {
+            "package_name": "com.example.student"
+          }
+        },
+        "oauth_client": [],
+        "api_key": [
+          {
+            "current_key": "AIzaSyCscWGaQ9iB-cy5zt1vHsKg6VSl8ltrwx0"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": []
+          }
+        }
+      },
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:881424394419:android:a4cdcc36125a80a2f0a8c6",
+          "android_client_info": {
+            "package_name": "com.example.studenttracker"
+          }
+        },
+        "oauth_client": [],
+        "api_key": [
+          {
+            "current_key": "AIzaSyCscWGaQ9iB-cy5zt1vHsKg6VSl8ltrwx0"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": []
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

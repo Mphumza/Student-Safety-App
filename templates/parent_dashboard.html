@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}Parent Dashboard - Mphumza Safety{% endblock %}
+
+{% block parent_links %}
+    <li class="nav-item"><a class="nav-link" href="{{ url_for('report_incident') }}">Report Incident</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Welcome Header -->
+    <div style="text-align: center; margin-top: 25px;">
+        <h1 style="font-size: 2.5em; font-weight: bold;">Welcome, {{ parent['name'] }}</h1>
+        <p style="font-size: 1.2em; font-weight: 600; margin-bottom: 15px;">Manage student safety reports and track incidents.</p>
+        <span style="font-size: 2em;">👋</span>
+    </div>
+
+    <!-- Profile Icon (Clickable) -->
+    <div style="text-align: right;">
+        <i class="fas fa-user-circle profile-icon" onclick="openProfileModal()"></i>
+    </div>
+
+    <!-- Children List -->
+    <h2>Your Children:</h2>
+    <ul class="list-group">
+        {% for child_id, child in children.items() %}
+            {% if child.get('is_active', True) %}
+                <li class="list-group-item">
+                    <strong>{{ child['name'] }}</strong> (ID: {{ child_id }})<br>
+                    <img src="{{ url_for('get_qr_code', child_id=child_id) }}" alt="QR Code for {{ child['name'] }}" class="qr-code" /><br>
+                    <strong>Scans:</strong> 
+                    {% if child.get('scans') %}
+                        {{ child['scans'] | join(', ') }}
+                    {% else %}
+                        No scans recorded.
+                    {% endif %}
+                    <br><br>
+                    <!-- Edit Child Name Form -->
+                    <form method="POST" action="{{ url_for('edit_child', child_id=child_id) }}" class="d-inline">
+                        <input type="text" name="child_name" value="{{ child['name'] }}" class="form-control d-inline" style="width: auto; display: inline-block;">
+                        <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                    </form>
+                    <!-- Deactivate Child Button -->
+                    <form action="{{ url_for('deactivate_child', child_id=child_id) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('Are you sure you want to deactivate this child?');">
+                            Deactivate
+                        </button>
+                    </form>
+                </li>
+            {% else %}
+                <li class="list-group-item">
+                    <strong>{{ child['name'] }}</strong> (ID: {{ child_id }}) - <span class="text-muted">Deactivated</span>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- Profile Pop-Up Modal -->
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeProfileModal()">&times;</span>
+        <h2>Edit Profile</h2>
+        <form method="POST" action="{{ url_for('update_parent_profile') }}">
+            <label for="parent_name">Name:</label>
+            <input type="text" id="parent_name" name="name" value="{{ parent['name'] }}" required>
+
+            <label for="parent_email">Email:</label>
+            <input type="email" id="parent_email" name="email" value="{{ parent['email'] }}" required>
+
+            <h3>Children:</h3>
+            <div id="childrenList">
+                {% for child_id, child in children.items() %}
+                    <div class="child-item">
+                        <input type="text" name="children[]" value="{{ child['name'] }}" class="form-control">
+                    </div>
+                {% endfor %}
+            </div>
+            <button type="button" onclick="addChildField()">➕ Add Child</button>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openProfileModal() {
+        document.getElementById("profileModal").style.display = "block";
+    }
+
+    function closeProfileModal() {
+        document.getElementById("profileModal").style.display = "none";
+    }
+
+    function addChildField() {
+        var container = document.getElementById("childrenList");
+        var input = document.createElement("input");
+        input.type = "text";
+        input.name = "children[]";
+        input.className = "form-control";
+        input.placeholder = "New Child Name";
+        container.appendChild(input);
+    }
+</script>
+
+<style>
+    .profile-icon {
+        font-size: 40px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        color: #007bff;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        width: 50%;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .close {
+        float: right;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .qr-code {
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+    }
+</style>
+{% endblock %}
+

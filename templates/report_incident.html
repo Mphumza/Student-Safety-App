@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Report Incident - Mphumza Safety{% endblock %}
+
+{% block content %}
+<div class="incident-header text-center">
+    <h1>Report an Incident</h1>
+    <div class="divider"></div>
+    <p class="lead">Please provide the details below to help us address the situation swiftly and efficiently.</p>
+</div>
+
+
+    <!-- Images of Incidents Section -->
+    <div class="row mb-5 text-center">
+        <div class="col-md-4">
+            <div class="incident-card">
+                <img src="{{ url_for('static', filename='images/accident.jpg') }}" alt="Accident" class="incident-image">
+                <p class="incident-text">🚗 <strong>Accident</strong> - Report any student-related traffic incidents.</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="incident-card">
+                <img src="{{ url_for('static', filename='images/theft.jpg') }}" alt="Theft" class="incident-image">
+                <p class="incident-text">🔒 <strong>Theft</strong> - Report missing belongings or stolen items.</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="incident-card">
+                <img src="{{ url_for('static', filename='images/harassment.jpg') }}" alt="Harassment" class="incident-image">
+                <p class="incident-text">⚠️ <strong>Harassment</strong> - Report any form of bullying or abuse.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incident Report Form -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <!-- 🔹 Added Form Heading and Description -->
+                    <h4 class="form-title text-center">Fill in the details below</h4>
+                    <p class="form-description text-center">Your report will remain confidential. Provide accurate details to help us take swift action.</p>
+                    
+                    <form method="POST" action="{{ url_for('report_incident') }}" enctype="multipart/form-data">
+                        <!-- Incident Type -->
+                        <div class="form-group">
+                            <label for="incident_type">Incident Type</label>
+                            <select class="form-control" id="incident_type" name="incident_type" required>
+                                <option value="" disabled selected>Select Incident Type</option>
+                                <option value="Accident">Accident</option>
+                                <option value="Theft">Theft</option>
+                                <option value="Harassment">Harassment</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label for="incident_description">Description of Incident</label>
+                            <textarea class="form-control" id="incident_description" name="incident_description" rows="4" required></textarea>
+                        </div>
+                    
+                        <!-- Incident Location -->
+                        <div class="form-group">
+                            <label for="incident_location">Location of Incident</label>
+                            <input type="text" class="form-control" id="incident_location" name="incident_location" required>
+                        </div>
+                    
+                        <!-- Image Upload -->
+                        <div class="form-group">
+                            <label for="incident_image">Upload Image (Optional)</label>
+                            <input type="file" class="form-control-file" id="incident_image" name="incident_image">
+                        </div>
+                    
+                        <!-- Hidden Field for Parent Email -->
+                        <input type="hidden" name="parent_email" value="{{ session['parent_email'] }}">
+                    
+                        <!-- Submit Button -->
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit Report</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incident Reporting Instructions -->
+    <div class="incident-help">
+        <h4>Need Help?</h4>
+        <p>If you're unsure about the incident type, please provide as much detail as possible. Our team will assist you.</p>
+        <img src="{{ url_for('static', filename='images/help.jpg') }}" 
+             alt="Incident Reporting Help" 
+             class="incident-help-img">
+    </div>
+</div>
+{% endblock %}
+

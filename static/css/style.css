@@ -1,0 +1,253 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Consistent Page Headers */
+.incident-header, 
+.welcome-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.incident-header h1, 
+.welcome-section h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #007bff !important; /* Match Welcome Page */
+    text-align: center;
+}
+
+.incident-header p, 
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.divider {
+    width: 50px;
+    height: 4px;
+    background: #007bff; /* Blue Divider */
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+/* Incident Cards */
+.incident-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.incident-card:hover {
+    transform: scale(1.05);
+}
+
+.incident-image {
+    width: 100%;
+    height: 220px; /* Improved size */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.incident-text {
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Form Styling */
+.card.shadow-sm {
+    border-radius: 12px;
+    border: none;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.form-description {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.form-control, 
+.form-control-file {
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Help Section */
+.incident-help {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    max-width: 600px;
+}
+
+.incident-help h4 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.incident-help p {
+    font-size: 18px;
+    color: #6c757d;
+}
+
+.incident-help-img {
+    width: 60%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.incident-help-img:hover {
+    transform: scale(1.05);
+}
+/* Card Styling */
+.user-card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    background: #918e8e;
+}
+
+.user-card:hover {
+    transform: scale(1.05);
+}
+
+.user-card .card-body {
+    padding: 30px;
+}
+
+.user-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.user-card p {
+    font-size: 1rem;
+    color: #6c757d;
+} 
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Spacing between buttons */
+}
+
+.btn {
+    width: auto; /* Makes button width minimal */
+    padding: 8px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.btn-outline-primary,
+.btn-outline-danger {
+    border-width: 2px;
+}
+
+.custom-width {
+    width: 150px; /* Adjust as needed */
+}
+
+/* Contact Page Styles */
+.divider {
+    width: 50px;
+    height: 4px;
+    background: #007bff;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+/* Contact Card */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #343a40;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-card h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Icons */
+.icon-whatsapp {
+    color: #25D366;
+}
+
+.icon-linkedin {
+    color: #0077B5;
+}
+
+.icon-phone {
+    color: #28A745;
+}
+
+.icon-tiktok {
+    color: #000;
+}
+

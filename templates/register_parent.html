@@ -1,0 +1,168 @@
+
+
+<div class="container">
+    <h1>Parent Registration</h1>
+    <!-- Display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/register_parent" onsubmit="return validatePassword()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" pattern="0\d{9}" title="Phone number must start with 0 and be 10 digits long" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+        <p id="password_error" style="color: red; display: none;">Passwords do not match!</p>
+
+        <label for="children">Children (comma-separated):</label>
+        <input type="text" id="children" name="children">
+
+        <input type="submit" value="Register">
+    </form>
+</div>
+
+<script>
+    function validatePassword() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+        var errorMsg = document.getElementById("password_error");
+
+        if (password !== confirmPassword) {
+            errorMsg.style.display = "block";
+            return false; // Prevent form submission
+        } else {
+            errorMsg.style.display = "none";
+            return true; // Allow form submission
+        }
+    }
+</script>
+
+<style>
+    /* Keep body styling as default for all pages */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #dfdfdf;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Container-specific styling to center content */
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin: 20px auto; /* Center it with a slight margin from the top */
+    }
+
+    .error-message {
+        color: #ff4d4d;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #28a745;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #218838;
+    }
+
+    input[type="submit"]:active {
+        background-color: #1e7e34;
+    }
+
+    /* Additional styles for a clean polished look */
+    input:focus {
+        outline: none;
+        border-color: #28a745;
+    }
+
+    input::placeholder {
+        color: #aaa;
+    }
+
+    .container form {
+        margin-top: 20px;
+    }
+
+    /* Flash messages styling */
+    .flashes {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .flashes li {
+        margin: 10px 0;
+        padding: 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    .success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+</style>

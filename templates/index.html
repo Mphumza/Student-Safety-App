@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}Mphumza Safety{% endblock %}
+
+{% block content %}
+<style>
+    .hero-section {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                    url("{{ url_for('static', filename='images/joburg.jpg') }}") center center / cover no-repeat;
+        padding: 70px 0 50px;
+        color: white;
+        position: relative;
+        z-index: 1;
+        margin-top: -40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .welcome-section h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-bottom: 15px;
+    }
+
+    .welcome-section p {
+        font-size: 1.05rem;
+        color: #ffffff;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .divider {
+        width: 60px;
+        border: 2px solid #ffffff;
+        margin: 25px auto 0;
+        opacity: 0.8;
+    }
+
+    .content-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .user-card {
+        border: none;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+        width: 105%; /* slightly wider */
+    }
+
+    .user-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .user-card .card-body {
+        padding: 28px;
+    }
+
+    .btn-group a {
+        min-width: 100px;
+    }
+
+    /* spacing and positioning */
+    .parent-card {
+        margin-right: 25px;
+        margin-left: -10px;
+    }
+
+    .admin-card {
+        margin-left: 25px;
+        margin-right: -10px;
+    }
+
+    @media (max-width: 768px) {
+        .user-card {
+            width: 100%;
+        }
+
+        .parent-card,
+        .admin-card {
+            margin: 0;
+        }
+    }
+</style>
+
+<!-- Hero Image Section -->
+<div class="hero-section text-center">
+    <div class="content-container">
+        <!-- Welcome Message -->
+        <div class="welcome-section">
+            <h1 class="text-primary">Welcome to Mphumza Safety</h1>
+            <p class="lead">
+                Your trusted platform for student safety and incident reporting. Whether you're a parent ensuring your child's safety or an admin managing security, we've got you covered.
+            </p>
+            <hr class="divider">
+        </div>
+
+        <!-- Cards -->
+        <div class="row mt-5 justify-content-center">
+            <!-- Parent Card -->
+            <div class="col-md-5 mb-4 parent-card">
+                <div class="card user-card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">👨‍👩‍👧 Parent</h3>
+                        <p class="card-text">Access safety features, track incidents, and ensure your child’s well-being.</p>
+                        <div class="btn-group">
+                            <a href="{{ url_for('register_parent') }}" class="btn btn-primary">Register</a>
+                            <a href="{{ url_for('login_parent') }}" class="btn btn-outline-primary">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Card -->
+            <div class="col-md-5 admin-card">
+                <div class="card user-card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">🛡️ Admin</h3>
+                        <p class="card-text">Manage student safety reports, incidents, and ensure a secure environment.</p>
+                        <div class="btn-group">
+                            <a href="{{ url_for('register') }}" class="btn btn-danger">Register</a>
+                            <a href="{{ url_for('login') }}" class="btn btn-outline-danger">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+>
+    <!-- About Us Section -->
+    <div class="about-us-section mt-5 p-5 bg-light rounded shadow-sm">
+        <h2 class="text-center text-dark fw-bold">About Us</h2>
+        <div class="row align-items-center mt-4">
+            <div class="col-md-6">
+                <p class="lead text-justify">
+                    Mphumza Safety was founded with a vision to create a secure environment for students and provide parents with peace of mind. Our platform offers innovative solutions for tracking incidents, ensuring real-time reporting, and promoting transparency in school safety. <br><br> 
+                    We believe in using technology to enhance security and empower both parents and school administrators in safeguarding the well-being of students.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/about-us.jpg') }}" class="img-fluid rounded shadow" alt="About Mphumza Safety">
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission Statement -->
+    <div class="mission-section mt-5 p-5 bg-white rounded shadow-sm">
+        <h2 class="text-center text-primary fw-bold">Our Mission</h2>
+        <div class="row align-items-center mt-4">
+            <div class="col-md-6 order-md-2">
+                <p class="lead text-justify">
+                    Our mission is to foster a safer learning environment by leveraging technology to provide real-time incident reporting, prevention strategies, and intervention tools. <br><br> 
+                    We are committed to creating a seamless communication channel between parents, students, and school administrators to enhance safety and well-being.
+                </p>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <img src="{{ url_for('static', filename='images/mission.jpg') }}" class="img-fluid rounded shadow" alt="Our Mission">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
