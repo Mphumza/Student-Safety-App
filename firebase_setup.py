@@ -1,20 +1,25 @@
+import json
+import os
 import firebase_admin
 from firebase_admin import credentials, firestore
 import pyrebase
 import requests
 import base64
 
+# Get Firebase credentials from environment variable
+firebase_json = os.environ.get("FIREBASE_CREDENTIALS")
+
+if not firebase_json:
+    raise ValueError("Missing FIREBASE_CREDENTIALS environment variable")
 
 # Firebase Admin SDK setup for backend operations (Firestore)
-cred = credentials.Certificate('studenttracker2-82547-firebase-adminsdk-d30ki-2f49a3b827.json')
+cred = credentials.Certificate(json.loads(firebase_json))
 firebase_admin.initialize_app(cred)
 
 # Firestore setup
 db = firestore.client()
 
 # Firebase config for Pyrebase (authentication)
-
-
 firebaseConfig = {
   "apiKey": "AIzaSyC4du9PpLM6IYTmpzTHT--yWVZdRHB1GEE",
   "authDomain": "studenttracker2-82547.firebaseapp.com",
@@ -25,10 +30,12 @@ firebaseConfig = {
   "databaseURL": "https://studenttracker2-82547.firebaseio.com",
   "measurementId": "G-STNFFEH210"
 }
-IMGBB_API_KEY  ='3adaa8e4932309a2251dd119a5d28754'
+
+IMGBB_API_KEY = '3adaa8e4932309a2251dd119a5d28754'
+
 def upload_image_to_imgbb(image_file):
     """Uploads image to imgbb and returns the image URL."""
-
+    
     # Read the image file and encode it to base64
     image_data = base64.b64encode(image_file.read()).decode("utf-8")
 
