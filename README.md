@@ -166,3 +166,27 @@ If you're passionate about **EdTech**, **student safety**, or improving communit
 
 If you believe in safer schools through technology, please **star this repository** to show your support!
 
+![Screenshot 2025-04-15 192909](https://github.com/user-attachments/assets/2244fd99-a523-4898-878a-803c03fb8a91)
+
+![Screenshot 2025-04-15 192938](https://github.com/user-attachments/assets/1da2d16d-c45c-4324-9e40-d7e0bdf4931c)
+
+![Screenshot 2025-04-15 193045](https://github.com/user-attachments/assets/ecbfe243-b394-4b3b-9ff8-98ff12854409)
+
+![Screenshot 2025-04-15 190750](https://github.com/user-attachments/assets/73a328f5-c585-4a9e-9c49-8baf4ce54eff)
+
+![Screenshot 2025-04-15 192551](https://github.com/user-attachments/assets/69e2a8de-71c4-4815-8122-71053394d3c8)
+
+![Screenshot 2025-04-15 193923](https://github.com/user-attachments/assets/fccbb2a7-8afd-4868-9bd7-efc739846617)
+
+![Screenshot 2025-04-15 193957](https://github.com/user-attachments/assets/8e71d68e-dd76-451d-ae03-959713843805)
+
+![Screenshot 2025-04-15 194334](https://github.com/user-attachments/assets/02de51a1-a0a3-40ec-befa-0c12fdf6b2e1)
+
+![Screenshot 2025-04-15 194309](https://github.com/user-attachments/assets/8cbd0ff9-5498-4dda-8191-7a4676eb9f9f)
+
+![Screenshot 2025-04-15 192837](https://github.com/user-attachments/assets/44898e3d-a6dc-496a-a271-46514372678e)
+
+
+
+
+
