@@ -164,6 +164,8 @@ If you're passionate about **EdTech**, **student safety**, or improving communit
 
 ## ⭐ Give It a Star!
 
+heres same screenshots!
+
 If you believe in safer schools through technology, please **star this repository** to show your support!
 
 ![Screenshot 2025-04-15 192909](https://github.com/user-attachments/assets/2244fd99-a523-4898-878a-803c03fb8a91)
@@ -175,6 +177,10 @@ If you believe in safer schools through technology, please **star this repositor
 ![Screenshot 2025-04-15 190750](https://github.com/user-attachments/assets/73a328f5-c585-4a9e-9c49-8baf4ce54eff)
 
 ![Screenshot 2025-04-15 192551](https://github.com/user-attachments/assets/69e2a8de-71c4-4815-8122-71053394d3c8)
+
+![Screenshot 2025-04-15 203834](https://github.com/user-attachments/assets/7b42e340-fad6-4f34-afd0-6f5f5d4e910a)
+
+![Screenshot 2025-04-15 203934](https://github.com/user-attachments/assets/14be940f-7abd-4010-9981-74549ec8caab)
 
 ![Screenshot 2025-04-15 193923](https://github.com/user-attachments/assets/fccbb2a7-8afd-4868-9bd7-efc739846617)
 
