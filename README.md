@@ -176,6 +176,8 @@ If you believe in safer schools through technology, please **star this repositor
 
 ![Screenshot 2025-04-15 190750](https://github.com/user-attachments/assets/73a328f5-c585-4a9e-9c49-8baf4ce54eff)
 
+![Screenshot 2025-04-15 204414](https://github.com/user-attachments/assets/b9b4f667-f3c7-4faf-b74d-5176d482dfb2)
+
 ![Screenshot 2025-04-15 192551](https://github.com/user-attachments/assets/69e2a8de-71c4-4815-8122-71053394d3c8)
 
 ![Screenshot 2025-04-15 203834](https://github.com/user-attachments/assets/7b42e340-fad6-4f34-afd0-6f5f5d4e910a)
