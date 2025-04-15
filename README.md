@@ -141,7 +141,7 @@ python app.py
 ## 📬 Contact
 
 For feature requests, bug reports, or collaborations:  
-📧 mphumza.dev@gmail.com
+📧 mphumelelingema@icloud.com
 
 ---
 
